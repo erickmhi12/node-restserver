@@ -14,7 +14,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //oarse application/json
 app.use(bodyParser.json())
 
-app.use(require('./routes/usuario'));
+//app.use(require('./routes/usuario'));
+//app.use(require('./routes/login'));
+
+//Configuracion Global de Rutas
+
+app.use(require('./routes/index'));
+
 
 mongoose.connect(process.env.URLDB, (err, res) => {
     if (err) throw err;
