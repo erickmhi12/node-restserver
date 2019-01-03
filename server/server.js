@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
+const path = require('path');
+
 const bodyParser = require('body-parser');
 
 //parser apllicaction/x-www-form-urlencoded
@@ -16,6 +18,11 @@ app.use(bodyParser.json())
 
 //app.use(require('./routes/usuario'));
 //app.use(require('./routes/login'));
+
+//Habilitar la carpeta 
+
+//app.use(express.static(__dirname + '../public'));
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 //Configuracion Global de Rutas
 
