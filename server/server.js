@@ -30,12 +30,16 @@ app.use(require('./routes/index'));
 
 
 mongoose.connect(process.env.URLDB, (err, res) => {
-    if (err) throw err;
+    if (err) newFunction(err);
 
     console.log('Base de Datos ONLINE');
 });
 
 
 app.listen(process.env.PORT, () => {
-    console.log(`scuchando el puerto ${process.env.PORT}`);
+    console.log(`escuchando el puerto ${process.env.PORT}`);
 });
+
+function newFunction(err) {
+    throw err;
+}
